@@ -1,18 +1,31 @@
 import os
-import tempfile 
+
+import tempfile
+
 import pickle
+
 import streamlit as st
+
 import time
+
 import langchain
-import langchain_openai
-from langchain_community.llms import OpenAI
+
+from langchain.llms import OpenAI
+
 from langchain.chains import RetrievalQAWithSourcesChain
+
 from langchain.chains.qa_with_sources.loading import load_qa_with_sources_chain
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import UnstructuredURLLoader,UnstructuredFileLoader
-from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores import FAISS
+
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+from langchain.document_loaders import UnstructuredURLLoader, UnstructuredFileLoader
+
+from langchain.embeddings import OpenAIEmbeddings
+
+from langchain.vectorstores import FAISS
+
 from secret_key import openapi_key
+
 os.environ['OPENAI_API_KEY'] = openapi_key
 
 # Get all environment variables (To make sure the key is secured)

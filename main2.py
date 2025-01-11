@@ -25,7 +25,10 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
 import openai
+import faiss
 
+
+index = faiss.IndexFlatL2(4)
 
 
 # Get all environment variables (To make sure the key is secured)

@@ -188,15 +188,15 @@ if uploaded_files:
 
     # check if data was loaded properly
 
-    if not data:
+    # if not data:
 
-        st.error("No data was loaded from the provided URLs or files. Please check the inputs")
+    #     st.error("No data was loaded from the provided URLs or files. Please check the inputs")
 
-        st.stop()
+    #     st.stop()
 
-    else:
+    # else:
 
-        st.write(f"Loaded {len(data)} documents")
+    #     st.write(f"Loaded {len(data)} documents")
 
  
 

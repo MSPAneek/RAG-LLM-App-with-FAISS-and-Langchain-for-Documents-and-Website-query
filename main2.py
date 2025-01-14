@@ -25,7 +25,7 @@ st.title("Research Query Tool")
 st.sidebar.subheader("Websites")
 
 urls = []
-for i in range(3):
+for i in range(1):
     url = st.sidebar.text_input(f"URL {i+1}")
     urls.append(url)
 if url.strip():  # Filter out empty inputs

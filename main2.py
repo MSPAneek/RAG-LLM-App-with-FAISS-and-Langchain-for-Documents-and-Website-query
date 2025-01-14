@@ -1,7 +1,6 @@
 import nltk
 import os
 import tempfile
-import pickle
 import streamlit as st
 import time
 import openai
@@ -25,7 +24,7 @@ st.title("Research Query Tool")
 st.sidebar.subheader("Websites")
 
 urls = []
-for i in range(1):
+for i in range(3):
     url = st.sidebar.text_input(f"URL {i+1}")
     urls.append(url)
 if url.strip():  # Filter out empty inputs

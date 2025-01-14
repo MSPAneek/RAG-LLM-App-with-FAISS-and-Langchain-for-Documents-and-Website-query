@@ -13,6 +13,27 @@ from langchain.document_loaders import UnstructuredURLLoader, UnstructuredFileLo
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 
+# Download the punkt resource
+nltk.download('punkt')
+
+# Define a custom NLTK data directory in the current working directory
+nltk_data_dir = os.path.join(os.getcwd(), "nltk_data")
+os.makedirs(nltk_data_dir, exist_ok=True)
+
+# Set the NLTK data path
+nltk.data.path.append(nltk_data_dir)
+
+# Download punkt to the custom directory
+nltk.download('punkt', download_dir=nltk_data_dir)
+
+
+from nltk.data import find
+
+try:
+    find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', download_dir=nltk_data_dir)
+
  # Get all environment variables
 from dotenv import load_dotenv
 load_dotenv()
